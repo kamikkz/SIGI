@@ -15,4 +15,7 @@ class Kami extends Model
     public function usuario(){
         return $this->belongsTo(User::class,'user_id');
     }
+    public function cinternos(){
+        return $this->hasMany(Cinterno::class);
+    }
 }
