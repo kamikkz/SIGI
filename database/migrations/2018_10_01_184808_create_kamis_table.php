@@ -16,7 +16,8 @@ class CreateKamisTable extends Migration
         Schema::create('kamis', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->string('name',500);
+            $table->integer('version')->default(1);
+            $table->integer('subversion')->default(0);
             $table->timestamps();
             $table->softDeletes();
 
