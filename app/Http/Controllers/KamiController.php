@@ -43,14 +43,11 @@ class KamiController extends Controller
             $kami->user_id = $user->id;
             $kami->dependencia =$user->name;
             $kami->save();
-            return 'Debo de mandar al dash board de nuevo';
+            $kami->id;
+            return 'Debo de mandar al dash board de nuevo'.$kami->id." ";
         }elseif ($filtrar>0){
             return 'Debo de mandar al dash board para seleccion de encuesta';
         }
-    }
-    public function mejora(Kami $kami)
-    {
-        //
     }
 
     /**
