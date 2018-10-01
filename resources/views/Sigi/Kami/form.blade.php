@@ -1,4 +1,4 @@
-{!! Form::open(['route' => 'Curso.store']) !!}
+{!! Form::open(['route' => 'Kami.store']) !!}
 <div class="card-body">
     <div class="form-group row">
         <div class="col-lg-12">

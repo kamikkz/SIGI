@@ -16,8 +16,10 @@ class CreateKamisTable extends Migration
         Schema::create('kamis', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
+            $table->string('dependencia');
             $table->integer('version')->default(1);
             $table->integer('subversion')->default(0);
+            $table->enum('status',['Recientemente creado','En revisión','Aprobado','Rechazado'])->default('Recientemente creado');
             $table->timestamps();
             $table->softDeletes();
 

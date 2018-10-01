@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Sigi\Kami;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;//Llamar datos de auth
 class KamiController extends Controller
 {
     /**
@@ -24,6 +24,7 @@ class KamiController extends Controller
      */
     public function create()
     {
+        //$user = Auth::user();//Para llamar los datos del usuario auth
         return view('Sigi.Kami.create');
     }
 
@@ -34,6 +35,20 @@ class KamiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+    {
+        $user = Auth::user();
+        $filtrar = Kami::where('user_id',$user->id)->where('dependencia',$user->name)->count();
+        if ($filtrar==0){
+            $kami = new Kami();
+            $kami->user_id = $user->id;
+            $kami->dependencia =$user->name;
+            $kami->save();
+            return 'Debo de mandar al dash board de nuevo';
+        }elseif ($filtrar>0){
+            return 'Debo de mandar al dash board para seleccion de encuesta';
+        }
+    }
+    public function mejora(Kami $kami)
     {
         //
     }

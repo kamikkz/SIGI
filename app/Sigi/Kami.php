@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Kami extends Model
 {
     use SoftDeletes;
-    protected $table ='dependences';
+    protected $table ='kamis';
     protected $fillable = [
-        'name','user_id',
+        'user_id','dependencia','status',
     ];
     public function usuario(){
         return $this->belongsTo(User::class,'user_id');
