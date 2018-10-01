@@ -15,7 +15,15 @@ class CreateKamisTable extends Migration
     {
         Schema::create('kamis', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->string('name',500);
             $table->timestamps();
+            $table->softDeletes();
+
+            //references
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
