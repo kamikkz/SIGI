@@ -14,7 +14,7 @@ class KamiController extends Controller
      */
     public function index()
     {
-        //
+        return 'miaw';
     }
 
     /**
@@ -24,7 +24,7 @@ class KamiController extends Controller
      */
     public function create()
     {
-        //
+        return view('Sigi.Kami.create');
     }
 
     /**

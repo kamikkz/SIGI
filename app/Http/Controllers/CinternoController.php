@@ -14,7 +14,8 @@ class CinternoController extends Controller
      */
     public function index()
     {
-        //
+        $cinternos = Cinterno::all();
+        return view('Sigi.Cinterno.index', compact('cinternos'));
     }
 
     /**
