@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PeriodicityTableSeeder::class);
         $this->call(SeverityTableSeeder::class);
         $this->call(TemporalityTableSeeder::class);
+        $this->call(FreccTableSeeder::class);
 
     }
 }
