@@ -7,6 +7,7 @@
                         <a href="{{route('ContextoInterno.index')}}" class="btn btn-primary pull-right color04">Volver al listado</a>
                     </div>
                     @include('error')
+                    @include('errors')
                     @include('info')
                     @include ('Sigi.Cinterno.form')
                 </div>
