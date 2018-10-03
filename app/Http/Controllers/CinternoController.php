@@ -71,9 +71,10 @@ class CinternoController extends Controller
      * @param  \App\Sigi\Cinterno  $cinterno
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cinterno $cinterno)
+    public function edit($cinterno)
     {
-        //
+        $cinterno = Cinterno::find($cinterno);
+        return view('Sigi.Cinterno.edit',compact('cinterno'));
     }
 
     /**

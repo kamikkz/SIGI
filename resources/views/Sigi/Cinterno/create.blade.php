@@ -3,7 +3,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Crear Actividad</h2>
+                        <h2>Crear Contexto Interno</h2>
                         <a href="{{route('ContextoInterno.index')}}" class="btn btn-primary pull-right color04">Volver al listado</a>
                     </div>
                     @include('error')
